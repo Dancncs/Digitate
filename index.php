@@ -22,7 +22,10 @@ get_header(); ?>
                 if ( is_home() && ! is_front_page() ) : ?>
                     <header>
                             <h2 class="page-title"><img src="<?php bloginfo('template_directory') ?>/images/digitate.png"><?php single_post_title(); ?></h2>
-                            <?php get_search_form(); ?>
+                            <a href="#" class="search-navi" title="Search"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <section id="search-input">
+                                <?php get_search_form(); ?>
+                            </section>
                     </header>
                 <?php
                 

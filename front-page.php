@@ -3,44 +3,46 @@
     <div class="content-area">
         <main>
             <div class="slide">
-                <div class="home-slide">
-
-                    <?php
-                    $slide = new WP_Query(array(
-                        'post_type' => 'any',
-                        'cat' => 4,
-                        'posts_per_page' =>2,
+                <?php
+                    $carousel = new WP_Query(array(
+                        'post_type' => 'carousel'
                     ));
-
-                    if($slide->have_posts()) : while($slide->have_posts()) : $slide->the_post();
+                ?>
+                <div class="home-slide">
+                    <?php if($carousel->have_posts()) : while($carousel->have_posts()) : $carousel->the_post(); ?>
+                    <!-- Carousel -->
+                    <?php if(have_rows('banner_customisation')) : 
+                    while(have_rows('banner_customisation')) : 
+                        the_row();
+                        $carousel_img = get_sub_field('hero_image');
+                        $carousel_text = get_sub_field('text_area');
+                        $carousel_link = get_sub_field('post_link');
+                        $carousel_video = get_sub_field('video');
                     ?>
                     <div class="home-slide-container post-slide-container">
-                        <?php if(has_post_thumbnail()) {
-                            the_post_thumbnail();
-                        } ?>
+                        <img src="<?php echo $carousel_img; ?>" alt="" class="wp-post-image">
                         <div class="home-slide-content wrap">
                             <div class="innerWrap">
-                                <h2><?php the_title(); ?></h2> 
-                                <?php the_excerpt(); ?>
-                                <?php if( get_field('video_link') ) { ?>
+                                <?php echo $carousel_text; ?>
+                                <?php if($carousel_video) : ?>
                                     <div class="video-pop">
-                                        <a class="popup-youtube" href="<?php the_field('video_link'); ?>">
+                                        <a class="popup-youtube" href="<?php echo $carousel_video; ?>">
                                             <img src="<?php bloginfo('template_directory') ?>/images/playbtn.png" alt="play">
                                         </a>
                                     </div>
-                                <?php } elseif(get_field('event_find_out_more')) { ?>
+                                <?php endif; ?>
+                                <?php if($carousel_link) : ?>
                                     <div class="event-link">
-                                        <a href="<?php the_field('event_find_out_more'); ?>" target="_blank">
+                                        <a href="<?php echo $carousel_link; ?>" target="_blank">
                                             Find Out More
                                         </a>
                                     </div>
-                                <?php } ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div> <!-- .home-slide-container -->
-                    <?php
-                    endwhile; endif; wp_reset_postdata();
-                    ?>
+                    <?php endwhile; endif; ?>
+                <?php endwhile; endif; wp_reset_postdata(); ?>
                     
                     <div class="home-slide-container">
                         <img src="<?php bloginfo('template_directory')?>/images/home-slide.jpg" alt="" class="wp-post-image">
@@ -49,19 +51,8 @@
                             <p>Cognitive automation <br>solution for enterprises</p>
                         </div>
                     </div> <!-- .home-slide-container -->
-                    <div class="home-slide-container">
-                        <img src="https://www.digitate.com/wp-content/uploads/2017/12/Space-Frontier_2800.jpg" alt="" class="wp-post-image">
-                        <div class="home-slide-content wrap">
-                            <p>Could AI be the Force that IT has been seeking all these years to better run their infrastructure?</p>
-                            <div class="event-link">
-                                <a href="https://www.digitate.com/star-wars-impacts/" target="_blank">
-                                    Find Out More
-                                </a>
-                            </div>
-                        </div>
-                    </div> <!-- .home-slide-container -->
                 </div> <!-- .home-slide -->
-        </div> <!-- .slide -->
+            </div> <!-- .slide -->
             <section class="quick-link">
                 <?php if(have_rows('quick_link_field')) : ?>
                     <div class="content-wrapper">

@@ -17,6 +17,10 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'digitate' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<a href="#" class="search-navi" title="Search"><i class="fa fa-search" aria-hidden="true"></i></a>
+                <section id="search-input">
+                    <?php get_search_form(); ?>
+                </section>
 			</header><!-- .page-header -->
                         
                         <div class="blogpost">

@@ -1,7 +1,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <?php if(!in_category('campaign-post')) : ?>
     <div class="title">
         <h1 class="post-title"><?php the_title(); ?></h1>
     </div>
+    <?php endif; ?>
     <?php if( has_tag() ) { ?>
     <div class="meta">
         <div class="tags">

@@ -1,6 +1,41 @@
 <?php
     function create_custom_postypes() {
 
+        // CPT: Carousel
+        $labels = array (
+                'name' => 'Carousels',
+                'singular_name' => 'Carousel',
+                'menu_name' => 'Carousel Banner',
+                'name_admin_bar' => 'Carousel',
+                'add_new' => 'Add New',
+                'add_new_item' => 'Add New Carousel Banner',
+                'new_item' => 'New Carousel Banner',
+                'edit_item' => 'Edit Carousel Content',
+                'view_item' => 'View Carousel Content',
+                'all_items' => 'All Carousel Banners',
+                'search_items' => 'Search Carousel Content',
+                'parent_item_colon' => 'Parent Carousel Content',
+                'not_found' => 'No Carousel Content Found',
+                'not_found_in_trash' => 'No Carousel Content Found in Trash'
+        );
+
+        $args = array (
+                'labels' => $labels,
+                'public' => true,
+                'publicly_queryable' => true,
+                'show_ui' => true,
+                'show_in_menu' => true,
+                'menu_position' => 5,
+                'menu_icon' => 'dashicons-slides',
+                // 'taxonomies' => array( 'category' ),
+                'query_var' => true,
+                'capability_type' => 'post',
+                'has_archive' => false,
+                'hierarchical' => false,
+                // 'supports' => array( 'title', 'editor', 'thumbnail' )
+        );
+        register_post_type( 'carousel', $args );
+
         // CPT: Event
         $labels = array (
             'name' => 'Events',
