@@ -3543,7 +3543,8 @@ nav ul {
 }
 
 .single-resource article {
-  margin-top: 80px; 
+  margin-top: 80px;
+  max-width: 580px;
 }
 .single-resource article .post {
   max-width: 320px;
