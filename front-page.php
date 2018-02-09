@@ -130,7 +130,7 @@
                                 <?php if(get_field('link_location')) { ?>
                                     <p><a href="<?php the_field('link_location'); ?>">Find out more <span></span></a></p>
                                 <?php } else { ?>
-                                    <p><a href="<?php the_permalink() ?>">Find out More <span></span></a></p>
+                                    <p><a href="<?php the_permalink() ?>">Find out more <span></span></a></p>
                                 <?php } ?>
                             </div>
                             <?php endwhile; ?>

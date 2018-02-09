@@ -58,6 +58,7 @@
                     <ul class="awards">
                         <li><a href="/digitate-wins-best-enterprise-application-for-artificial-intelligence-at-ai-summit/"><img src="<?php bloginfo('template_directory'); ?>/images/awards_1.jpg" height="73" width="57" alt=""></a></li>
                         <li><a href="/digitate-earns-big-innovation-award-recognition/"><img src="<?php bloginfo('template_directory'); ?>/images/awards_2.png" height="72" width="80" alt=""></a></li>
+                        <li><a href="https://www.digitate.com/resource/ema-radar-workload-automation-radar-report/"><img src="https://www.digitate.com/wp-content/uploads/2018/01/EMA-WLA-2017-Radar-Award-Digitate-01.png" height="40" width="159" alt=""></a></li>
                     </ul> <!-- .awards -->
                 </div> <!-- .foot-info -->
             </div> <!-- .contact-group -->

@@ -1627,9 +1627,11 @@ section {
         clear: both; 
       }
       .site-footer .foot-info .awards li {
-        display: inline;
-        float: left;
+        display: inline-block;
         margin-right: 15px; 
+      }
+      .site-footer .foot-info .awards li:nth-child(3) {
+        padding-top: 10px; 
       }
   @media (min-width: 680px) {
     .site-footer {
