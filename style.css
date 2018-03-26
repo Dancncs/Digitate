@@ -3548,6 +3548,9 @@ nav ul {
   margin-top: 80px;
   max-width: 580px;
 }
+.single-resource article .download-box {
+  margin-left: 0;
+}
 .single-resource article .post {
   width: 100%;
 }

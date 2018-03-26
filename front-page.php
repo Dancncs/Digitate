@@ -42,15 +42,7 @@
                         </div>
                     </div> <!-- .home-slide-container -->
                     <?php endwhile; endif; ?>
-                <?php endwhile; endif; wp_reset_postdata(); ?>
-                    
-                    <div class="home-slide-container">
-                        <img src="<?php bloginfo('template_directory')?>/images/home-slide.jpg" alt="" class="wp-post-image">
-                        <div class="home-slide-content wrap">
-                            <img src="<?php bloginfo('template_directory') ?>/images/ignio.png" alt="ignio" class="ignioBrand">
-                            <p>Cognitive automation <br>solution for enterprises</p>
-                        </div>
-                    </div> <!-- .home-slide-container -->
+                    <?php endwhile; endif; wp_reset_postdata(); ?>
                 </div> <!-- .home-slide -->
             </div> <!-- .slide -->
             <section class="quick-link">
